@@ -21,6 +21,10 @@ export class BidingsComponent {
         'small':true
     }
     
+    styleObject = {
+        color:"yellow",
+        height:'200px'
+    }
     constructor() {
         console.log("Constructor called");
         setInterval(() =>{

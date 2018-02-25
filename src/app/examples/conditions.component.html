@@ -1,0 +1,9 @@
+<h3>Condition Example</h3>
+<button (click)="show(1)">Success</button>
+<button (click)="show(2)">Warning</button>
+<button (click)="show(3)">Info</button>
+<!-- * -->
+<div *ngIf="status===1" class="box success">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti expedita quia tenetur hic facere modi, fugiat repellat id. Ipsum fuga dignissimos eaque animi labore hic ea ex libero quisquam odit.</div>
+<div *ngIf="status===2" class="box alert">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est voluptatem quo, ducimus iste repellendus facilis corrupti doloremque, consequatur officiis porro quaerat nihil, amet voluptatibus dicta quisquam obcaecati repudiandae quibusdam voluptates!</div>
+<div *ngIf="status===3" class="box info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, ducimus corrupti? Id, quaerat. Fugiat, sapiente adipisci? Tempore magni repudiandae hic aliquid tenetur assumenda deserunt, impedit voluptate ex provident iste? Dolor?</div>
+<div class="box" *ngIf="status !==1">status is not success</div>

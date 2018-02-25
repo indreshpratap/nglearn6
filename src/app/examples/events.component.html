@@ -1,0 +1,16 @@
+<h2>Event example</h2>
+<!-- () event binding -->
+<button (click)="sayHello()">Say Hello</button>
+<div (mouseover)="onmouseover($event)">
+   {{description}}
+</div>
+
+<button (click)="fetchDataById($event,uid)">Fetch data </button>
+<button (click)="clickWithCtrl($event)">Ctrl+ click </button>
+
+<ul>
+    <li id="li-1" (click)="getInfo($event)">List item</li>
+    <li id="li-2" (click)="getInfo($event)">List item</li>
+    <li id="li-3" (click)="getInfo($event)">List item</li>
+    <li id="li-4" (click)="getInfo($event)">List item</li>
+</ul> 

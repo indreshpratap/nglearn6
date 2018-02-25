@@ -14,3 +14,14 @@ h1 {
     padding: 5px;
     border: 1px solid;
 }
+
+.alert {
+    background-color: tomato;
+    color: white;
+}
+.info {
+background-color: lightblue;
+}
+.success {
+    background-color: lightgreen;
+}
