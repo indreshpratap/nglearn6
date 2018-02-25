@@ -1,0 +1,48 @@
+<h2>Bindings Example</h2>
+
+<!-- {{}} Interpolation -->
+<b>{{ message }}</b>
+<div>{{ message }}</div>
+{{ flag }}  {{ count }}
+{{ user }}
+
+{{navItemId}}
+{{ colors }}
+<ul id="nav">
+    <li id="navitem1">Nav Item 1</li>
+    <li id="navitem2">Nav Item 2</li>
+
+  <!-- []  Property Binding  -->
+    <li [id]="navItemId">Current Id is: <b>{{navItemId}}</b></li>
+
+
+</ul>
+
+<input type="text" [value]="navItemId">
+
+<div [id]="itemid">Error field</div>
+<!-- Inline assigning the value to binding property -->
+<div [id]="'item-id'">Inline property binding</div>
+Binding with checked property <input type="checkbox" [disabled]="!flag" [checked]="flag">
+
+<!-- ngClass with string -->
+<div class="box" [ngClass]="active">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Amet deleniti ipsum tempora. Incidunt commodi, deleniti assumenda nobis
+     consectetur illum molestias necessitatibus quas ipsa et beatae, sit accusamus.
+      Optio, consectetur eum.
+</div>
+<!-- ngClass with array -->
+<div class="box" [ngClass]="classArray">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Amet deleniti ipsum tempora. Incidunt commodi, deleniti assumenda nobis
+     consectetur illum molestias necessitatibus quas ipsa et beatae, sit accusamus.
+      Optio, consectetur eum.
+</div>
+<!-- ngClass with Object -->
+<div class="box" [ngClass]="classObject">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Amet deleniti ipsum tempora. Incidunt commodi, deleniti assumenda nobis
+     consectetur illum molestias necessitatibus quas ipsa et beatae, sit accusamus.
+      Optio, consectetur eum.
+</div>
