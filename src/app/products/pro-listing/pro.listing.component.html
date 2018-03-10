@@ -1,0 +1,31 @@
+<h3>Available Products</h3>
+<div class="columns">
+  <div class="column col-8">
+    Total {{ productList.length }}
+    <button class="btn" (click)="pushToTop()">Push to top</button>
+    <button class="btn" (click)="addLast()">Add to last</button>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Title</th>
+          <th>Product Type</th>
+          <th>Created At</th>
+          <th>#</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ap of productList;let indx = index;let frst = first;let l = last;let odd=odd;let even=even;" [class.first]="frst" [class.last]="l">
+          <td> {{ indx+1 }} </td>
+          <td> {{ ap.title }} </td>
+          <td> {{ ap.product_type }} </td>
+          <td> {{ ap.created_at }} </td>
+          <td>
+            Index: {{indx}} First: {{ frst }} Last: {{ l }} Odd: {{odd}} Even:{{even}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   
+  </div>
+</div>
