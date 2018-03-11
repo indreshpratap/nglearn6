@@ -4,7 +4,8 @@
     Total {{ productList.length }}
     <button class="btn" (click)="pushToTop()">Push to top</button>
     <button class="btn" (click)="addLast()">Add to last</button>
-    <table class="table table-striped table-hover">
+    <button class="btn" (click)="toogleMode()">Show {{!gridDisplay?' Grid':'List'}}</button>
+    <table class="table table-striped table-hover" *ngIf="!gridDisplay">
       <thead>
         <tr>
           <th>No.</th>
@@ -15,7 +16,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let ap of productList;let indx = index;let frst = first;let l = last;let odd=odd;let even=even;" [class.first]="frst" [class.last]="l">
+        <tr *ngFor="let ap of productList;let indx = index;let frst = first;let l = last;let odd=odd;let even=even;" [class.first]="frst"
+          [class.last]="l">
           <td> {{ indx+1 }} </td>
           <td> {{ ap.title }} </td>
           <td> {{ ap.product_type }} </td>
@@ -26,6 +28,11 @@
         </tr>
       </tbody>
     </table>
-   
+    <div *ngIf="gridDisplay" class="columns">
+      <div *ngFor="let pro of productList" class="column col-4">
+        <app-pro-detail [product]="pro"></app-pro-detail>
+      </div>
+    </div>
+
   </div>
 </div>

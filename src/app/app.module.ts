@@ -8,6 +8,7 @@ import { ConditionsComponent } from './examples/conditions.component';
 import { HeaderComponent } from './layout/header.component';
 import { HomeComponent } from './layout/home.component';
 import { ProListingComponent } from './products/pro-listing/pro.listing.component';
+import { ProDetailComponent } from './products/pro-detail/pro-detail.component';
 
 
 //import { AppComponent } from './app.component';
@@ -21,7 +22,8 @@ import { ProListingComponent } from './products/pro-listing/pro.listing.componen
    ConditionsComponent,
    HeaderComponent,
    HomeComponent,
-   ProListingComponent
+   ProListingComponent,
+   ProDetailComponent
   ],
   imports: [
     BrowserModule

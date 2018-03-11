@@ -7,6 +7,7 @@ import { Component, OnInit } from "@angular/core";
 })
 export class ProListingComponent {
   productList: Array<any>;
+  gridDisplay = true;
   constructor() {
     this.productList = [
       {
@@ -108,6 +109,9 @@ export class ProListingComponent {
         vendor: "Shopify",
         product_type: "Television",
         tags: ["MI", "TV"]
-      },);
+      });
+  }
+  toogleMode() {
+    this.gridDisplay = !this.gridDisplay;
   }
 }
