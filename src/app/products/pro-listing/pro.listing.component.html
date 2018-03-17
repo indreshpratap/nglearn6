@@ -30,9 +30,12 @@
     </table>
     <div *ngIf="gridDisplay" class="columns">
       <div *ngFor="let pro of productList" class="column col-4">
-        <app-pro-detail [product]="pro"></app-pro-detail>
+        <app-pro-detail [product]="pro" (onAddToCart)="pushToCart($event)"></app-pro-detail>
       </div>
     </div>
 
+  </div>
+  <div class="column col-4">
+     <!-- Populate cartList data in table using for loop -->
   </div>
 </div>

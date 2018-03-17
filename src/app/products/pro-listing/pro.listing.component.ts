@@ -8,6 +8,8 @@ import { Component, OnInit } from "@angular/core";
 export class ProListingComponent {
   productList: Array<any>;
   gridDisplay = true;
+  cartList = [];
+
   constructor() {
     this.productList = [
       {
@@ -113,5 +115,8 @@ export class ProListingComponent {
   }
   toogleMode() {
     this.gridDisplay = !this.gridDisplay;
+  }
+  pushToCart(event){
+    console.log('Received at parent end and data is: ', event);
   }
 }
