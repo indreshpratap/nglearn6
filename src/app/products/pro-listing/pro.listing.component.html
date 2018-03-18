@@ -29,13 +29,36 @@
       </tbody>
     </table>
     <div *ngIf="gridDisplay" class="columns">
-      <div *ngFor="let pro of productList" class="column col-4">
-        <app-pro-detail [product]="pro" (onAddToCart)="pushToCart($event)"></app-pro-detail>
+      <div *ngFor="let pro of productList;let i=index" class="column col-4">
+        <app-pro-detail [indx]="i" [product]="pro" (onAddToCart)="pushToCart($event)"></app-pro-detail>
       </div>
     </div>
 
   </div>
   <div class="column col-4">
      <!-- Populate cartList data in table using for loop -->
+     <table class="table table-striped table-hover" *ngIf="cartList.length">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Title</th>
+          <th>Qty</th>
+          <th>#</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ap of cartList;let indx = index">
+          <td> {{ indx+1 }} </td>
+          <td> {{ ap.productTitle }} </td>
+          <td> {{ ap.qty }} </td>
+          <td>
+             <button (click)="increment(ap)">+</button> 
+             <button (click)="decrement(ap)">-</button> 
+             <button (click)="removeFromCart(indx)">x</button> 
+             </td>
+          </tr>
+          </tbody>
+          </table>
+
   </div>
 </div>

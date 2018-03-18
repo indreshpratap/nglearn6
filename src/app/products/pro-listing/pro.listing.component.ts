@@ -5,12 +5,16 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "pro.listing.component.html",
   styles:['.first,.last {font-weight:bold}']
 })
-export class ProListingComponent {
+export class ProListingComponent implements OnInit {
   productList: Array<any>;
   gridDisplay = true;
   cartList = [];
 
+ngOnInit(){
+console.log("Product lising ngOnInit");
+}
   constructor() {
+    console.log("Product listing constructor");
     this.productList = [
       {
         id: 4450,
@@ -82,6 +86,7 @@ export class ProListingComponent {
     ];
   }
 
+  
   pushToTop(){
       this.productList.unshift({
         id: 1000,
@@ -118,5 +123,20 @@ export class ProListingComponent {
   }
   pushToCart(event){
     console.log('Received at parent end and data is: ', event);
+    event.qty=1;
+    this.cartList.push(event);
+  }
+
+  removeFromCart(indx){
+    if(confirm("Are you sure want to remove?")){
+      this.cartList.splice(indx,1);
+    }
+  }
+
+  increment(item) {
+    ++item.qty;
+  }
+  decrement(item) {
+    --item.qty;
   }
 }
