@@ -1,0 +1,13 @@
+<div class="card">
+   
+    <div class="card-header">
+      <div class="card-title h5">{{index+1}} - {{product.title}}</div>
+      <div class="card-subtitle text-gray">{{product.handle}} {{product.product_type}}</div>
+    </div>
+    <div class="card-body">
+    {{product.body_html}}
+    </div>
+    <div class="card-footer">
+      <button *ngIf="showcart" class="btn btn-primary" >Add To Cart</button>
+    </div>
+  </div>

@@ -7,8 +7,11 @@ import { Component, OnInit } from "@angular/core";
 })
 export class ProListingComponent implements OnInit {
   productList: Array<any>;
-  gridDisplay = true;
+  gridDisplay = false;
   cartList = [];
+  currentSeletedItem:any;
+  currentSelectedIndex:number;
+  showCartBtn=false;
 
   ngOnInit() {
     console.log("Product lising ngOnInit");
@@ -136,4 +139,25 @@ export class ProListingComponent implements OnInit {
   decrement(item) {
     --item.qty;
   }
+
+  showDetail(indx){
+    this.currentSelectedIndex = indx;
+    this.getNextOne();
+  }
+
+  next(){
+    ++this.currentSelectedIndex;
+    this.getNextOne();
+  }
+
+  getNextOne(){
+    this.currentSeletedItem = this.productList[this.currentSelectedIndex];
+    
+  }
+
+  modifyCurrentSelectedItemData(){
+    this.currentSeletedItem.title = "Title changed";
+  }
+
+  
 }

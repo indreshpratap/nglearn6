@@ -9,6 +9,7 @@ import { HeaderComponent } from './layout/header.component';
 import { HomeComponent } from './layout/home.component';
 import { ProListingComponent } from './products/pro-listing/pro.listing.component';
 import { ProDetailComponent } from './products/pro-detail/pro-detail.component';
+import { ProCompleteDetailsComponent } from './products/pro-complete-details/pro-complete-details.component';
 
 
 //import { AppComponent } from './app.component';
@@ -23,7 +24,8 @@ import { ProDetailComponent } from './products/pro-detail/pro-detail.component';
    HeaderComponent,
    HomeComponent,
    ProListingComponent,
-   ProDetailComponent
+   ProDetailComponent,
+   ProCompleteDetailsComponent
   ],
   imports: [
     BrowserModule

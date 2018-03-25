@@ -1,12 +1,15 @@
-import { Component, OnInit, Input, EventEmitter, Output, OnDestroy, AfterViewInit, AfterViewChecked, DoCheck } from "@angular/core";
+import { Component, OnInit, Input, EventEmitter, Output, OnDestroy, AfterViewInit, AfterViewChecked, DoCheck, OnChanges, SimpleChanges } from "@angular/core";
 
 @Component({
   selector: "app-pro-detail",
   templateUrl: "pro-detail.component.html"
 })
-export class ProDetailComponent implements OnInit,OnDestroy,AfterViewInit,AfterViewChecked,DoCheck {
+export class ProDetailComponent implements OnInit,OnDestroy,AfterViewInit,AfterViewChecked,DoCheck,OnChanges {
  
  
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("ngonchanges: ",changes);
+  }
   @Input() product: any;
   @Input("indx") index:number; // indx is an alias for index 
   @Output() onAddToCart: EventEmitter<any> = new EventEmitter<any>();
@@ -20,8 +23,7 @@ export class ProDetailComponent implements OnInit,OnDestroy,AfterViewInit,AfterV
   ngAfterViewInit(): void {
     console.log("product details ngAfterViewInit",this.index);
   }
-
-   
+ 
   ngAfterViewChecked(): void {
     console.log("product details After view checked",this.index);
   }
