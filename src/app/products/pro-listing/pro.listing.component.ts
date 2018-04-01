@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { ProCompleteDetailsComponent } from "../pro-complete-details/pro-complete-details.component";
 
 @Component({
   selector: "app-pro-listing",
@@ -13,6 +14,12 @@ export class ProListingComponent implements OnInit {
   currentSelectedIndex:number;
   showCartBtn=false;
 
+  @ViewChild("detail")
+  prodDetail:ProCompleteDetailsComponent;
+
+  @ViewChild("cartbtn")
+  btn:any;
+  
   ngOnInit() {
     console.log("Product lising ngOnInit");
   }
@@ -157,6 +164,13 @@ export class ProListingComponent implements OnInit {
 
   modifyCurrentSelectedItemData(){
     this.currentSeletedItem.title = "Title changed";
+  }
+
+  printDetail(detail:ProCompleteDetailsComponent){
+    console.log(detail.getSelection());
+
+    console.log(this.prodDetail.getSelection());
+    console.log(this.btn);
   }
 
   

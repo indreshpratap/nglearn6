@@ -2,7 +2,8 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 
 @Component({
     selector: 'app-pro-complete-details',
-    templateUrl: 'pro-complete-details.component.html'
+    templateUrl: 'pro-complete-details.component.html',
+    styles:['.note{border:1px solid;padding:10px}']
 })
 
 export class ProCompleteDetailsComponent implements OnInit,OnChanges {
@@ -17,5 +18,9 @@ export class ProCompleteDetailsComponent implements OnInit,OnChanges {
     ngOnInit() { } 
     ngOnChanges(changes: SimpleChanges): void {
        console.log("Onchanges",changes);
+    }
+
+    getSelection(){
+        return {dept:1,role:2,users:[1,2,3]};
     }
 }
