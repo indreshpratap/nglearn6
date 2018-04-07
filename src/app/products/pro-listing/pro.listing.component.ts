@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, QueryList, ViewChildren } from "@angular/core";
 import { ProCompleteDetailsComponent } from "../pro-complete-details/pro-complete-details.component";
+import { ProDetailComponent } from "../pro-detail/pro-detail.component";
 
 @Component({
   selector: "app-pro-listing",
@@ -19,6 +20,12 @@ export class ProListingComponent implements OnInit {
 
   @ViewChild("cartbtn")
   btn:any;
+
+  @ViewChild(ProCompleteDetailsComponent)
+  byType:ProCompleteDetailsComponent;
+
+  @ViewChildren(ProDetailComponent)
+  proDetails:QueryList<ProDetailComponent>;
   
   ngOnInit() {
     console.log("Product lising ngOnInit");
@@ -167,10 +174,17 @@ export class ProListingComponent implements OnInit {
   }
 
   printDetail(detail:ProCompleteDetailsComponent){
-    console.log(detail.getSelection());
+    // by parameter
+    console.log("parameter",detail.getSelection());
 
-    console.log(this.prodDetail.getSelection());
+    // by reference
+    console.log("reference",this.prodDetail.getSelection());
+
+    // by type
+    console.log("by type",this.byType.getSelection());
     console.log(this.btn);
+
+    console.log(this.proDetails);
   }
 
   

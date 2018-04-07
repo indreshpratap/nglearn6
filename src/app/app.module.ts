@@ -10,6 +10,7 @@ import { HomeComponent } from './layout/home.component';
 import { ProListingComponent } from './products/pro-listing/pro.listing.component';
 import { ProDetailComponent } from './products/pro-detail/pro-detail.component';
 import { ProCompleteDetailsComponent } from './products/pro-complete-details/pro-complete-details.component';
+import { HighlightDirective } from './directive/highlight.directive';
 
 
 //import { AppComponent } from './app.component';
@@ -25,7 +26,8 @@ import { ProCompleteDetailsComponent } from './products/pro-complete-details/pro
    HomeComponent,
    ProListingComponent,
    ProDetailComponent,
-   ProCompleteDetailsComponent
+   ProCompleteDetailsComponent,
+   HighlightDirective
   ],
   imports: [
     BrowserModule

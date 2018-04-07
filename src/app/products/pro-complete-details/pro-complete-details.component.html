@@ -8,8 +8,13 @@
   </div>
   <div class="card-footer">
     <button *ngIf="showcart" class="btn btn-primary">Add To Cart</button>
-    <div class="note">
+    <div class="note" highlight>
       <ng-content></ng-content>
     </div>
+
+    <h5 highlight="silver">This is highlighted directive</h5>
+    
+    <h5 [highlight]="'lightgreen'">This is highlighted directive</h5>
+    
   </div>
 </div>
