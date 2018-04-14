@@ -1,4 +1,10 @@
-import { Directive, OnInit, ElementRef, Input } from "@angular/core";
+import {
+  Directive,
+  OnInit,
+  ElementRef,
+  Input,
+  HostListener
+} from "@angular/core";
 
 @Directive({
   selector: "[highlight]"
@@ -13,7 +19,22 @@ export class HighlightDirective implements OnInit {
 
   ngOnInit(): void {
     console.log(this._ref);
+  }
+
+  @HostListener("click")
+  onClick() {
+    console.log("Yes you clicked");
+  }
+
+  @HostListener("mouseenter")
+  highlightOnEnter() {
     this._ref.nativeElement.style.backgroundColor =
       this.bgColor || "lightyellow";
+  }
+
+  @HostListener("mouseleave", ["$event"])
+  clearOnLeave(ev) {
+    console.log(ev);
+    this._ref.nativeElement.style.backgroundColor = "";
   }
 }

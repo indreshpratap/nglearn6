@@ -11,6 +11,7 @@ import { ProListingComponent } from './products/pro-listing/pro.listing.componen
 import { ProDetailComponent } from './products/pro-detail/pro-detail.component';
 import { ProCompleteDetailsComponent } from './products/pro-complete-details/pro-complete-details.component';
 import { HighlightDirective } from './directive/highlight.directive';
+import { ProductService } from './products/product.service';
 
 
 //import { AppComponent } from './app.component';
@@ -32,7 +33,7 @@ import { HighlightDirective } from './directive/highlight.directive';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

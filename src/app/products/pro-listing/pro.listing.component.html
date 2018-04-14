@@ -42,13 +42,13 @@
         <button (click)="modifyCurrentSelectedItemData()">Change Data</button>
         <button #cartbtn class="btn" (click)="showCartBtn=!showCartBtn">Toggle Cart</button>
         <button  class="btn" (click)="printDetail(detail)">Print Details</button>
-
+      Is CartButton Visible: {{ showCartBtn?'YES':'NO' }}
        {{cartbtn}}
       </div>
       {{detail}}
       <app-pro-complete-details #detail [product]="currentSeletedItem" [showcart]="showCartBtn" [index]="currentSelectedIndex">
         <b>Note, This is a limited addition item.</b> Show cart button= {{showCartBtn}}
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro illo est nisi minus labore ipsam fuga deleniti maxime
+        <p highlight>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro illo est nisi minus labore ipsam fuga deleniti maxime
           tempore odio voluptatum aperiam, eveniet quasi, magnam, provident eius consequatur. Corrupti, aliquid?</p>
       </app-pro-complete-details>
       
