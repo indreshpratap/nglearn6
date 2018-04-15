@@ -12,6 +12,7 @@ import { ProDetailComponent } from './products/pro-detail/pro-detail.component';
 import { ProCompleteDetailsComponent } from './products/pro-complete-details/pro-complete-details.component';
 import { HighlightDirective } from './directive/highlight.directive';
 import { ProductService } from './products/product.service';
+import { ObservablesComponent } from './observables/observables.component';
 
 
 //import { AppComponent } from './app.component';
@@ -28,7 +29,8 @@ import { ProductService } from './products/product.service';
    ProListingComponent,
    ProDetailComponent,
    ProCompleteDetailsComponent,
-   HighlightDirective
+   HighlightDirective,
+   ObservablesComponent
   ],
   imports: [
     BrowserModule
