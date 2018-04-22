@@ -1,5 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+
+import {FormsModule} from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { Routes, RouterModule } from "@angular/router";
 import { BidingsComponent } from "./examples/bindings.component";
@@ -20,6 +22,7 @@ import { DashboardComponent } from "./order/dashboard/dashboard.component";
 import { PendingComponent } from "./order/pending/pending.component";
 import { CompletedComponent } from "./order/completed/completed.component";
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ItemRegistrationComponent } from './item-registration/item-registration.component';
 
 //import { AppComponent } from './app.component';
 
@@ -36,6 +39,7 @@ var routes: Routes = [
       { path: "completed", component: CompletedComponent }
     ]
   },
+  {path:"item-reg",component:ItemRegistrationComponent},
   {path:"**",component:NotFoundComponent}// not found matching
 ];
 
@@ -58,9 +62,10 @@ var routes: Routes = [
     DashboardComponent,
     PendingComponent,
     CompletedComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ItemRegistrationComponent
   ],
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, FormsModule,RouterModule.forRoot(routes)],
   providers: [ProductService],
   bootstrap: [AppComponent]
 })
