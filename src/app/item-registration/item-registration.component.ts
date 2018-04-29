@@ -8,16 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class ItemRegistrationComponent implements OnInit {
 
   reg;
+
+  items=[];
   constructor() { }
 
   ngOnInit() {
     this.reg = {
-      itemName:null,
+      itemName:"Test",
       description:null,
       price:null,
-      category:null,
+      category:"South Indian",
       quantity:null,
-      preference:null,
+      preference:"Veg",
       coldDrink:null,
       snacks:null,
      
@@ -25,7 +27,10 @@ export class ItemRegistrationComponent implements OnInit {
   }
 
   saveItem(form) {
-    console.log(form);
+    if(form.valid){
+     this.items.push(form.value);
+     form.reset();
+    }
   }
 
 }

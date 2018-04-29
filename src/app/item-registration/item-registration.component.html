@@ -1,58 +1,81 @@
 <form #itemform="ngForm">
-<div>
-  <label>Item Name</label>
-  <input type="text" name="itemname" required [(ngModel)]="reg.itemName">
-  <span *ngIf="itemform.controls['itemname'].errors">
-      <span *ngIf="itemform.controls['itemname'].errors['required']">Required</span>
-   
-     </span>
-</div>
+  <div>
+    <label>Item Name</label>
+    <input type="text" name="itemname" required [ngModel]="reg.itemName">
+    <app-errors [control]="itemform.controls['itemname']"></app-errors>
 
-<div>
-  <label>Description</label>
-  <textarea name="description" required minlength="10" [(ngModel)]="reg.description"></textarea>
-  <span *ngIf="itemform.controls['description'].errors">
-   <span *ngIf="itemform.controls['description'].errors['required']">Required</span>
-   <span *ngIf="itemform.controls['description'].errors['minlength']">Minimum length is 10</span>
-  </span>
-</div>
-<div>
-  <label>Category</label>
- <select required name="category" [(ngModel)]="reg.category">
-   <option>Chinese</option>
-   <option>South Indian</option>
- </select>
+  </div>
 
- <!-- <app-errors [control]="itemform.controls['category']"></app-errors>
-<span *ngIf="control.errors">
-   <span *ngIf="control.errors['required']">Required</span>
-   <span *ngIf="control.errors['minlength']">Minimum length is 10</span>
-  </span>
--->
-</div>
-<div>
-  <label>Price</label>
-  <input required min="10" name="price" type="number" [(ngModel)]="reg.price">
-</div>
-<div>
-  <label>Quantity</label>
-  <input name="quantity" required type="number" [(ngModel)]="reg.quantity">
-</div>
-<div>
-  <label>Preference</label>
-  <input type="radio" name="preference" [(ngModel)]="reg.preference" value="Veg">Veg
-  <input type="radio" name="preference" [(ngModel)]="reg.preference" value="Non Veg">Non Veg
-</div>
-<div>
-  <label>Included Items</label>
-  <input name="colddrink" type="checkbox" [(ngModel)]="reg.coldDrink"> Cold Drink
-  <input name="snacks" type="checkbox" [(ngModel)]="reg.snacks"> Snacks
-</div>
+  <div>
+    <label>Description</label>
+    <textarea name="description" required minlength="15" [(ngModel)]="reg.description"></textarea>
+    <app-errors [control]="itemform.controls['description']"></app-errors>
+  </div>
+  <div>
+    <label>Category</label>
+    <select required name="category" [ngModel]="reg.category">
+      <option></option>
+      <option>Chinese</option>
+      <option>South Indian</option>
+    </select>
+    <app-errors [control]="itemform.controls['category']"></app-errors>
 
-<button (click)="saveItem(itemform)">SAVE</button>
+  </div>
+  <div>
+    <label>Price</label>
+    <input required min="10" name="price" type="number" [(ngModel)]="reg.price">
+    <app-errors [control]="itemform.controls['price']"></app-errors>
+  </div>
+  <div>
+    <label>Quantity</label>
+    <input name="quantity" required type="number" [(ngModel)]="reg.quantity">
+    <app-errors [control]="itemform.controls['quantity']"></app-errors>
+  </div>
+  <div>
+    <label>Preference</label>
+    <input type="radio" name="preference" required [(ngModel)]="reg.preference" value="Veg">Veg
+    <input type="radio" name="preference" required [(ngModel)]="reg.preference" value="Non Veg">Non Veg
+  </div>
+  <div>
+    <label>Included Items</label>
+    <input name="colddrink" type="checkbox" [(ngModel)]="reg.coldDrink"> Cold Drink
+    <input name="snacks" type="checkbox" [(ngModel)]="reg.snacks"> Snacks
+  </div>
+
+  <button (click)="saveItem(itemform)">SAVE</button>
 </form>
 
-Form valid: {{itemform.valid}}
+<!-- Form valid: {{itemform.valid}}
 <pre>
+
+  // Model data
   {{reg|json}}
-</pre>
+
+
+  // Exact form data
+  {{itemform.value|json}}
+</pre> -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Desc</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Pref.</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{item.itemname}}</td>
+      <td>{{item.description}}</td>
+      <td>{{item.quantity}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.preference}}</td>
+      <td>{{item.category}}</td>
+    </tr>
+  </tbody>
+
+</table>

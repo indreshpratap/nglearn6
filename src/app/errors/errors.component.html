@@ -1,0 +1,4 @@
+<span *ngIf="control?.errors && control?.touched">
+  <span *ngIf="control.errors['required']">Required</span>
+  <span *ngIf="control.errors['minlength']">Minimum length is {{control.errors['minlength'].requiredLength}}</span>
+</span>

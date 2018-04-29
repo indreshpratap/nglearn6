@@ -23,6 +23,7 @@ import { PendingComponent } from "./order/pending/pending.component";
 import { CompletedComponent } from "./order/completed/completed.component";
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ItemRegistrationComponent } from './item-registration/item-registration.component';
+import { ErrorsComponent } from './errors/errors.component';
 
 //import { AppComponent } from './app.component';
 
@@ -63,7 +64,8 @@ var routes: Routes = [
     PendingComponent,
     CompletedComponent,
     NotFoundComponent,
-    ItemRegistrationComponent
+    ItemRegistrationComponent,
+    ErrorsComponent
   ],
   imports: [BrowserModule, FormsModule,RouterModule.forRoot(routes)],
   providers: [ProductService],
