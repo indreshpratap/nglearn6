@@ -15,12 +15,32 @@
     <textarea formControlName="address"></textarea>
     <app-errors [control]="orderForm.get('address')"></app-errors>
   </div>
+
+  <div>
+  <table class="table" formArrayName="orderedItems">
+    <tbody>
+      <tr *ngFor="let item of orderedItems.controls;let indx=index;" [formGroupName]="indx">
+        <td>
+          <select formControlName="sel_item">
+            <option *ngFor="let i of items;" [value]="i.itemname">{{i.itemname+ '  ('+i.quantity+')'}}</option>
+          </select>
+          <app-errors [control]="item.get('sel_item')"></app-errors>
+        </td>
+        <td>
+          <input type="number" formControlName="qty">
+          <app-errors [control]="item.get('qty')"></app-errors>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
   <div>
 <button>Book order</button>
 <button (click)="toogleForm(true)">Disable</button>
 <button (click)="toogleForm(false)">Enable</button>
 <button (click)="populateValue()">Fill the form</button>
 <button (click)="partialValue()">Partial fillup</button>
+<button (click)="addItem()">Add Item</button>
   </div>
 </form>
 
