@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import {HttpClientModule} from '@angular/common/http';
 
 import { FormsModule,ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
@@ -72,7 +73,7 @@ var routes: Routes = [
     ErrorsComponent,
     OrderBookingComponent
   ],
-  imports: [BrowserModule, ReactiveFormsModule,FormsModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, ReactiveFormsModule,FormsModule, RouterModule.forRoot(routes),HttpClientModule],
   providers: [ProductService, OrderService, LocalStorageService],
   bootstrap: [AppComponent]
 })

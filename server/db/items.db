@@ -1,0 +1,2 @@
+{"itemname":"Chips","description":"this is chips potato ","category":"South Indian","price":20,"quantity":100,"preference":"Veg","colddrink":null,"snacks":null,"active":true,"createdDate":{"$$date":1526799053461},"_id":"PoX0cBIjRoonXXv2"}
+{"itemname":"Burger","description":"This is macD burger","category":"Chinese","price":100,"quantity":20,"preference":"Veg","colddrink":true,"snacks":true,"active":true,"createdDate":{"$$date":1526798854617},"_id":"ybC0IVcmGEjdgDto"}

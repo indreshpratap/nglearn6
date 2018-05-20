@@ -42,7 +42,7 @@ export class OrderBookingComponent implements OnInit {
       email: [null, [Validators.required]],
       address: [null, [Validators.required, Validators.minLength(10)]],
       price: [null, [Validators.required]],
-      orderedItems: this.fb.array([])
+      orderedItems: this.fb.array([]) 
     });
 
   

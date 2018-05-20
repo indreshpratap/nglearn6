@@ -13,7 +13,7 @@ export class ItemRegistrationComponent implements OnInit {
   constructor(private orderService: OrderService) {}
 
   ngOnInit() {
-   this.loadItems();
+    this.loadItems();
     this.reg = {
       itemName: "Test",
       description: null,
@@ -27,14 +27,18 @@ export class ItemRegistrationComponent implements OnInit {
   }
 
   loadItems() {
-    this.items = this.orderService.getAllItems();
+    this.orderService.getAllItems().subscribe(res => {
+      this.items = res;
+    });
   }
 
   saveItem(form) {
     if (form.valid) {
-      this.orderService.saveNewItem(form.value);
-      this.loadItems();
-      form.reset();
+      this.orderService.saveNewItem(form.value).subscribe(res => {
+        console.log("got response", res);
+        this.loadItems();
+        form.reset();
+      });
     }
   }
 }
